@@ -20,7 +20,7 @@ CPPPATH = [cwd + '/../inc']
 # add dwin basic code
 # src = src + Glob('./*.c')
 # src = src + Glob('./basic/*.c')
-src = src + Glob('./widgets/*.c')
+# src = src + Glob('./widgets/*.c')
 
 group = DefineGroup('dwin', src, depend = ['PKG_USING_DWIN'], CPPPATH = CPPPATH)
 
