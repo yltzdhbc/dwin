@@ -1,14 +1,12 @@
 import os
 from building import *
 
-
-cwd  = GetCurrentDir()
 objs = []
+cwd  = GetCurrentDir()
 list = os.listdir(cwd)
 
-if GetDepend('PKG_USING_DWIN'):
-    for item in list:
-        if os.path.isfile(os.path.join(cwd, item, 'SConscript')):
-            objs = objs + SConscript(os.path.join(item, 'SConscript'))
+for item in list:
+    if os.path.isfile(os.path.join(cwd, item, 'SConscript')):
+        objs = objs + SConscript(os.path.join(item, 'SConscript'))
 
 Return('objs')
