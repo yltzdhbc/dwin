@@ -1,9 +1,10 @@
 from building import * 
 
 cwd = GetCurrentDir()
-src     = Glob('*.c') + Glob('*.cpp')
-CPPPATH = [cwd + '/../inc']
+src     = Glob('*.c')
+# CPPPATH = [cwd + '/../inc']
+inc = ['/../inc']
 
-group = DefineGroup('Dwin', src, depend = ['PKG_USING_DWIN'], CPPPATH = CPPPATH)
+group = DefineGroup('dwin', src, depend = ['PKG_USING_DWIN'], CPPPATH = inc)
 
 Return('group')
